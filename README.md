@@ -1,18 +1,54 @@
-The provided SQL code encompasses a series of queries designed to extract specific information from a relational database. These queries involve tasks such as filtering data based on conditions, calculating aggregates, and creating derived columns. They cover a range of analyses, including retrieving details about sales representatives, regions, and accounts for specific regions, identifying accounts with certain characteristics, and analyzing order data based on various criteria. Additionally, the queries address customer categorization, sales representative performance evaluation, and overall trends in sales. The code concludes with operations related to company names, email address creation, and initial password generation for specific personnel, demonstrating a comprehensive approach to data retrieval and manipulation in a relational database environment.
+# Parch & Posey Sales Analysis
 
-![Parsh and Posey ERD](https://github.com/M3tz43/Parsh_and_Posey_Database/assets/107323458/20df9635-ca8a-4abf-8296-28e4e57a7fb7)
+SQL analysis of a fictional paper company's sales, customer and web-engagement data. The project examines customer value, sales-representative performance, regional revenue and digital interaction patterns across a five-table relational database.
 
-Parch-and-Posey-Database-for-SQL
-This package contains data about Parch and Posey, a fictional paper-selling company used in the Bertelsmann Data Science Scholarship Program and provided by Mode Analytics. The company has 50 sales reps across four regions in the United States.
+![Parch & Posey entity-relationship diagram](https://github.com/M3tz43/Parsh_and_Posey_Database/assets/107323458/20df9635-ca8a-4abf-8296-28e4e57a7fb7)
 
-This database contains following tables. .CSV file for each table is in this repository.
+## Business questions
 
--accounts: all accounts from Parch and Posey
+- Which customers generate the highest lifetime revenue?
+- How can customers be segmented by purchasing value?
+- Which sales representatives and regions perform best?
+- Which sales and ordering patterns change over time?
+- How do customers engage through different web channels?
 
--orders: all orders made from 2014-12-03 to 2017-01-01
+## Dataset
 
--regions: the 4 regions in the United States where Parch and Posey operates
+| Table | Contents |
+| --- | --- |
+| `accounts` | Customer accounts and primary contacts |
+| `orders` | Order quantities, dates and revenue |
+| `sales_reps` | Sales representatives assigned to accounts |
+| `region` | U.S. sales regions |
+| `web_events` | Customer interactions by digital channel |
 
--sales_reps: information on Parch and Posey's sales reps
+The dataset represents Parch & Posey, a fictional paper company with 50 sales representatives operating across four U.S. regions.
 
--web_events: all web event data for Parch and Posey's accounts
+## SQL techniques demonstrated
+
+- Multi-table joins
+- Aggregation and grouped analysis
+- Common table expressions (CTEs)
+- Nested subqueries
+- Conditional logic with `CASE`
+- Date-based analysis with `DATE_TRUNC`
+- Customer segmentation and ranking
+- String transformation
+
+## Repository structure
+
+- `Parsh and posey Questions.sql` — analysis questions and PostgreSQL queries
+- `Parsh_and_posey_tables/` — CSV files for the five source tables
+
+## Running the analysis
+
+1. Create a PostgreSQL database.
+2. Create the five tables according to the entity-relationship diagram.
+3. Import the CSV files from `Parsh_and_posey_tables/`.
+4. Open `Parsh and posey Questions.sql` in pgAdmin or another PostgreSQL client.
+5. Run the queries individually to reproduce the analyses.
+
+## Data source
+
+The Parch & Posey dataset is an educational dataset used in Udacity's SQL coursework and originally provided through Mode Analytics.
+
